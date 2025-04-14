@@ -1,0 +1,25 @@
+.odd {
+  font-family: "Verdana", "DejaVu Sans", sans-serif;
+  background-color: #fda7a8;
+}
+
+#div-1 {
+  color: #0017e7;
+  font-size: 36px;
+}
+
+/* One solution to target the third element specifically without adding another class */
+/* .odd:nth-of-type(2) {
+  font-size: 24px;
+} */
+
+/* This solution uses a second class and chaining selectors. */
+.odd.cooler {
+  font-size: 24px;
+}
+
+#div-2 {
+  background-color: #7af85a;
+  font-size: 24px;
+  font-weight: bold;
+}
