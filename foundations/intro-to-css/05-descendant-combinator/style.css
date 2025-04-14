@@ -1,0 +1,23 @@
+/* One solution using type selectors and descendant combinator */
+/* div p {
+  background-color: #ffff00;
+  color: #ff0000;
+  font-size: 20px;
+  text-align: center;
+} */
+
+/* Second solution using class selectors and descendant combinator */
+/* .container .text {
+  background-color: #ffff00;
+  color: #ff0000;
+  font-size: 20px;
+  text-align: center;
+} */
+
+/* Third solution using class and type selectors + descendant combinator */
+div .text {
+  background-color: #ffff00;
+  color: #ff0000;
+  font-size: 20px;
+  text-align: center;
+}
