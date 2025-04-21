@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -19,7 +20,15 @@ body {
   background: white;
   width: 480px;
   border-radius: 10px;
-  box-shadow: 2px 4px 16px rgba(0,0,0,.2);
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.2);
+  /* We need our containers to sit side by side in the modal */
+  display: flex;
+  /* 
+    We need equal space between the items and the edge of the modal
+    as well as equal padding between the items themselves.
+  */
+  padding: 16px;
+  gap: 16px;
 }
 
 .icon {
@@ -33,6 +42,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* We need to prevent the icon from shrinking */
+  flex-shrink: 0;
 }
 
 .close-button {
@@ -48,6 +59,8 @@ body {
   justify-content: center;
   border: 1px solid #eee;
   padding: 0;
+  /* We need to prevent the icon from shrinking */
+  flex-shrink: 0;
 }
 
 button {
@@ -66,4 +79,36 @@ button.cancel {
   background: white;
   border: 1px solid #ddd;
   color: royalblue;
+}
+
+/*
+  We need a 16px gap between the header-container, text, and 
+  button-container. We can fulfill this requirement using 
+  gap but it will require us to stack the items on top of 
+  each other using flex, with flex-direction set to column.
+  The gap will then be placed vertically between the items.
+*/
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* 
+  We need the items in the header-container to sit side by side
+  and to be algined vertically with each other while also staying
+  on opposite sides of the header-container.
+*/
+.header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 
+  We need the header to be bold to match desired-outcome and to be
+  bigger than the surrounding text.
+*/
+.header {
+  font-size: 20px;
+  font-weight: 800;
 }
