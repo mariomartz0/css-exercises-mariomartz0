@@ -1,5 +1,12 @@
+/* My second attempt after seeing provided solution */
 body {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
+  /* 
+    All text and images on page need to be centered 
+    so it makes sense to set text-align to center
+    here.
+  */
+  text-align: center;
 }
 
 img {
@@ -10,6 +17,8 @@ img {
 .title {
   font-size: 36px;
   font-weight: 900;
+  /* Need 32px between title and items */
+  margin-bottom: 32px;
 }
 
 /* do not edit this footer */
@@ -24,3 +33,61 @@ img {
   justify-content: center;
   background: #eee;
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 52px;
+}
+
+.card {
+  /* Stops the div holding the items from flexing past 200px */
+  /* Also forces the text to wrap since it can't go past max-width */
+  max-width: 200px;
+}
+
+/* My first solution */
+/* body {
+  font-family: "Courier New", Courier, monospace;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 52px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+}
+
+.text {
+  text-align: center;
+} */
