@@ -1,8 +1,15 @@
+/* 
+  Aligned box by turning container into a flexbox and centering it
+  on main axis and cross axis using justify-content and align-items.
+*/
 .container {
   background: dodgerblue;
   border: 4px solid midnightblue;
   width: 400px;
   height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .box {
