@@ -1,4 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+/*
+  Reset so that it's easier to fine tune margin and padding.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   height: 100vh;
@@ -15,6 +26,8 @@ button {
   font-family: Roboto, sans-serif;
   border: none;
   border-radius: 8px;
+  /* Adding padding to button so it looks more button like */
+  padding: 8px 16px;
   background: #eee;
 }
 
@@ -23,4 +36,69 @@ input {
   border-radius: 16px;
   padding: 8px 24px;
   width: 400px;
+}
+
+/* Removing bullet points from list elements */
+ul {
+  list-style: none;
+}
+
+/* Removing underline from links and changing their color to match reference */
+a {
+  text-decoration: none;
+  color: #6d6d6d;
+}
+
+/* 
+  Using a container to stack header, content, and footer sub containers.
+  Also set the height of the container to 100% of the view port so that
+  the sub containers space out between the whole page after setting
+  justify-content to space-between. The header is pushed to the top of 
+  the page, the content is pushed to the center, and the footer is pushed 
+  to the bottom of the page.
+*/
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+/* 
+  Using flexbox to put a flexible space between the left-links and 
+  right-links. Also setting padding here to try and match reference.
+*/
+.header,
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+/*
+  Using flexbox so that the list items are placed in a row rather than a
+  column. Also putting a gap between them to try and match the reference. 
+*/
+.left-links,
+.right-links {
+  display: flex;
+  gap: 16px;
+}
+
+/* 
+  Using flexbox to stack the elements within the content div and center
+  them on the page. Also putting a gap between them to try and match
+  the reference image.
+*/
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Giving the footer a background colour to match the reference. */
+.footer {
+  background-color: #eeeeee;
 }
