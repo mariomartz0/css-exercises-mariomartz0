@@ -1,29 +1,118 @@
+/* Adding reset to increase control over page layout */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin: 0;
   min-height: 100vh;
+}
+/* 
+  Using flexbox to create overall page layout.
+  Header at the top, content in the middle, footer
+  at the bottom. Also, the div has to be enlarged
+  to flex across the whole page, top to bottom.
+*/
+.content {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .header {
   height: 72px;
   background: darkmagenta;
   color: white;
+  /* The header font-size is supposed to be 32px */
+  font-size: 32px;
+  /* The header font-weight is supposed to be 900 */
+  font-weight: 900;
+  /* The header text is supposed to be vertically centered */
+  display: flex;
+  align-items: center;
+  /* The header text is supoposed to be 16px from edge of the screen */
+  padding: 16px;
+}
+
+/* 
+  Using flexbox to place sidebar and card container
+  side by side in a row. Also, set flex-grow to 1 so
+  that the div takes up all the free available space in
+  the flexbox it is inside of.  
+*/
+.main {
+  display: flex;
+  flex: 1;
+}
+
+/*
+  The sidebar needs to be 300px wide and not shrinkable. 
+*/
+.sidebar {
+  width: 300px;
+  background: royalblue;
+  box-sizing: border-box;
+  /* Setting flex-shrink to 0 so the sidebar cannot shrink. */
+  flex-shrink: 0;
+  /* The sidebar needs 16px of padding. */
+  padding: 16px;
+}
+
+/* The bullet points need to be removed from the list of links. */
+ul {
+  list-style: none;
+}
+
+a {
+  /* The links need to be 24px font-size. */
+  font-size: 24px;
+  /* The links need to be white. */
+  color: white;
+  /* The links need to have the underline removed. */
+  text-decoration: none;
+}
+
+.card-container {
+  display: flex;
+  /* Cards section needs 48px of padding. */
+  padding: 48px;
+  /* Cards need to wrap horizontally in card section */
+  flex-wrap: wrap;
+  gap: 32px;
+  /* Need gap between wrapped rows to also be 32px to match reference. */
+  align-content: flex-start;
+}
+
+.card {
+  border: 1px solid #eee;
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+  /* Cards need a defined size to wrap correctly. */
+  width: 300px;
+  height: 350px;
+  padding: 16px;
 }
 
 .footer {
   height: 72px;
   background: #eee;
   color: darkmagenta;
-}
-
-.sidebar {
-  width: 300px;
-  background: royalblue;
-  box-sizing: border-box;
-}
-
-.card {
-  border: 1px solid #eee;
-  box-shadow: 2px 4px 16px rgba(0,0,0,.06);
-  border-radius: 4px;
+  /* The footer text needs to be centered vertically and horizontally. */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 
+    Optional: 
+    Not mentioned in the self-checklist but I made the padding of the
+    footer match the padding of the header so that they stay around the
+    same size.
+  */
+  padding: 16px;
 }
